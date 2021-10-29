@@ -22,12 +22,13 @@ const Meact = {
     createElement,
 };
 
-const element = Meact.createElement(
-    "div",
-    {id: foo},
-    React.createElement("a", null, "bar"),
-    React.createElement("b"),
-);
+/** @jsx Meact.createElement */
+const element = (
+  <div id="foo">
+    <a>bar</a>
+    <b />
+  </div>
+)
 
 const container = document.getElementById("root");
 ReactDOM.render(element, container);
